@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <book-detail title="Panduan Praktis Menguasai Vue.js" author="Lutfi Gani" year="2018"></book-detail>
+      <book-detail title="Jaga Dia Baik Baik Ya Mas" author="Someone" year="2021"></book-detail>
+    </div>
+    <template id="bookDetail">
+      <div>
+        <h2>Book Detail</h2>
+        <h3>{{ title }}</h3>
+        <p>Author:{{ author }} </p>
+        <p>Year:{{ year }} </p>
+        <hr>
+      </div>
+    </template>
+    <script>
+    Vue.component('book-detail', {
+      template: "#bookDetail",
+      props :['title','author','year']
+    })
+      var app = new Vue ({
+        el : "#app"
+      })
+    </script>
+  </body>
+</html>
